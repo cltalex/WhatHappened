@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.forum-container {
+    position: relative;
+    width: 300px;
+    padding: 10px;
+}
+
+.city-wrapper {
+    position: relative;
+}
+
+#cityInput, #date-input, #submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.city-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+
+.forum-error-text {
+    color: red;
+    font-weight: bold;
+}
+
+.loading-container {
+    background-color: rgb(15, 1, 42);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10000;
+}
+
+.loading-text {
+    color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}

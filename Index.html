@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="Script.js" defer></script>
+</head>
+
+<body>
+    <div class="loading-container" id="loading-container" style="display:none">
+        <div class="loading-text" id="loading-text">Loading ur shit ho.</div>
+    </div>
+
+    <div class="forum-container">
+        <div class="forum-error-text" id="forum-error-text"></div>
+        <input type="date" id="date-input"/>
+        <div class="city-wrapper">
+            <input type="text" id="cityInput" placeholder="Enter a city..." oninput="UpdateCitySuggestions()"/>
+            <div class="city-suggestions" id="city-suggestions"></div>
+        </div>
+        <button class="submit-btn" id="submit-btn" onclick="GetData()">Submit</button>
+    </div>
+</body>
