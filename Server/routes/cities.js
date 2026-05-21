@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-require('dotenv').config();
 
 router.get("/", async (req, res) => {
     const query = req.query.q;
@@ -8,7 +7,6 @@ router.get("/", async (req, res) => {
     if (!query || query.length < 2) {
         return res.json([]);
     }
-
     try {
         const response = await fetch(
             `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(query)}&type=city&apiKey=${process.env.GEOAPIFY_API_KEY}`
@@ -17,7 +15,10 @@ router.get("/", async (req, res) => {
         const data = await response.json();
 
         const cities = data.features.map(place => ({
-            formatted: place.properties.formatted
+            city: {
+                formatted: place.properties.formatted,
+                country: place.properties.country,
+            }
         }));
 
         res.json(cities);

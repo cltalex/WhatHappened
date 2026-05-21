@@ -51,7 +51,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: 10000;
+    z-index: 10;
 }
 
 .loading-text {
@@ -61,4 +61,5 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 50px;
+    z-index: 11;
 }

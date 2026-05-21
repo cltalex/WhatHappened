@@ -2,9 +2,18 @@ const backendURl = "http://localhost:3000";
 
 var bdayData = {
     newsArticles: {
-        article1: "",
-        article2: "",
-        article3: "",
+        article1: {
+            headline: "",
+            thumbnail: "",
+        },
+        article2: {
+            headline: "",
+            thumbnail: "",
+        },
+        article3: {
+            headline: "",
+            thumbnail: "",
+        }
     },
 };
 
@@ -37,11 +46,11 @@ async function UpdateCitySuggestions() {
             const div = document.createElement("div");
             div.parentElement = 
             div.classList.add("suggestion-item");
-            div.textContent = place.formatted;
+            div.textContent = place.city.formatted;
             div.addEventListener("click", () => {
-                cityInput.value = place.formatted;
+                cityInput.value = place.city.formatted;
                 citySuggestionsBox.innerHTML = "";
-                submittedCountry = place.country;
+                submittedCountry = place.city.country.replaceAll(" ", "");
                 selectedCity = true;
             });
             citySuggestionsBox.appendChild(div);
@@ -62,17 +71,19 @@ async function GetData() {
         return;
     }
     document.getElementById("loading-container").style.display = "block";
+    errorText.innerHTML = "";
+    const stupidDateFormat = dateInput.value.replaceAll("-", "");
 
+    // NEWS 
     try {
         ChangeLoadingText("Getting news articles...", "orange");
-        const stupidDateFormat = dateInput.value.replaceAll("-", "");
-        const country = submittedCountry;
         const response = await fetch(
             backendURl +
-            `/api/news?date=${encodeURIComponent(stupidDateFormat)}&country=${encodeURIComponent(country)}`
+            `/api/news?date=${encodeURIComponent(stupidDateFormat)}&country=${encodeURIComponent(submittedCountry)}`
         );
         const data = await response.json();
-        console.log(data);
+        bdayData.newsArticles = data;
+        ChangeLoadingText("Getting weather...", "red");
     } catch (error) {
         console.error(error);
         errorText.innerHTML = error;
@@ -83,7 +94,3 @@ function ChangeLoadingText(text, _color) {
     document.getElementById("loading-text").innerHTML = text;
     document.getElementById("loading-text").style.color = _color;
 }
-
-//TODO: logic for fetch news from other source on server
-//TODO: put info in bdayData frontend
-//restart server
