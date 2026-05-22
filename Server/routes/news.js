@@ -66,10 +66,8 @@ router.get("/", async (req, res) => {
         );
 
         const fallbackData = await fallbackSource.json();
-        console.log(year);
         if (fallbackData && fallbackData.events.length > 0) {
             const articles = fallbackData.events.filter(e => e.year === Number(year));
-            console.log(articles);
             if (articles.length > 0) {
                 newsArticles = {
                     article1: {

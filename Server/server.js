@@ -6,7 +6,8 @@ const express = require("express");
 const cors = require("cors");
 const citiesRoute = require("./routes/cities");
 const messageRoute = require("./routes/message");
-const newsRoutes = require("./routes/news");
+const newsRoute = require("./routes/news");
+const weatherRoute = require("./routes/weather");
 
 const PORT = 3000;
 const app = express();
@@ -16,7 +17,8 @@ app.use(express.json());
 
 app.use("/api/cities", citiesRoute);
 app.use("/api/message", messageRoute);
-app.use("/api/news", newsRoutes);
+app.use("/api/news", newsRoute);
+app.use("/api/weather", weatherRoute);
 
 
 app.listen(PORT, () => {

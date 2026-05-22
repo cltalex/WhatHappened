@@ -15,9 +15,11 @@ router.get("/", async (req, res) => {
         const data = await response.json();
 
         const cities = data.features.map(place => ({
-            city: {
+            cityData: {
                 formatted: place.properties.formatted,
                 country: place.properties.country,
+                latitude: place.properties.lat,
+                longitude: place.properties.lon,
             }
         }));
 
