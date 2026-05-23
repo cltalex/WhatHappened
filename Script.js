@@ -35,10 +35,16 @@ const errorText = document.getElementById("forum-error-text");
 cityInput.addEventListener("input", () => {
     selectedCity = false; //false when typing in it
 });
-if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/index.html") {
+if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/index.html" || window.location.href === "file:///C:/Users/alex/OneDrive/Documents/App/WhatHappened/Index.html") {
     dateInput.value = "2009-01-01";
-    cityInput.value = "www";
-    UpdateCitySuggestions();
+    cityInput.value = "Woodlake, CA, United States of America";
+    submittedLocationData = {
+        formatted: "Woodlake, CA, United States of America",
+        country: "United States",
+        latitude: 36.4134809,
+        longitude: -119.098633
+    };
+    selectedCity = true;
 }
 
 
@@ -60,6 +66,7 @@ async function UpdateCitySuggestions() {
             div.parentElement = 
             div.classList.add("suggestion-item");
             div.textContent = place.cityData.formatted;
+            console.log(place.cityData);
             div.addEventListener("click", () => {
                 submittedLocationData = place.cityData;
                 cityInput.value = submittedLocationData.formatted;
@@ -83,17 +90,21 @@ async function loadingTasks(tasks) {
     document.getElementById("loading-container").style.display = "block";
     errorText.innerHTML = "";
     try {
-        const results = await Promise.all(
-            tasks.map(task => task.run())
-        );
+        const results = [];
+        for (const task of tasks) {
+            results.push(await task.run());
+        }
         ChangeLoadingText("Finished!", "lightgreen");
         return results;
     } catch (error) {
         console.error(error);
-        errorText.innerHTML = error instanceof Error ? error.message : "Something went wrong with the loading tasks";
+        errorText.innerHTML =
+            error instanceof Error
+                ? error.message
+                : "Something went wrong with the loading tasks";
         throw error;
     } finally {
-        //switch to display page
+        // switch to display page
     }
 }
 
