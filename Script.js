@@ -1,6 +1,23 @@
 const backendURL = "http://localhost:3000";
 
 var bdayData = {
+	 trends: {
+		start: 0,
+		fem: {
+		  name: "",
+		  description: "",
+		  cutoutIMG: "",
+		  tFrameING "",
+		  bFrameIMG "",
+		},
+		masc: {
+		  name: "",
+		  description: "",
+		  cutoutIMG: "",
+	     tFrameING "",
+		  bFrameIMG "",
+		},
+	 },
     weather: {
         temperature: 0,
         high: 0,
