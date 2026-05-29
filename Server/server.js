@@ -8,6 +8,7 @@ const citiesRoute = require("./routes/cities");
 const messageRoute = require("./routes/message");
 const newsRoute = require("./routes/news");
 const weatherRoute = require("./routes/weather");
+const trendsRoute = require("./routes/trends");
 
 const PORT = 3000;
 const app = express();
@@ -19,6 +20,7 @@ app.use("/api/cities", citiesRoute);
 app.use("/api/message", messageRoute);
 app.use("/api/news", newsRoute);
 app.use("/api/weather", weatherRoute);
+app.use("/api/trends", trendsRoute);
 
 
 app.listen(PORT, () => {
