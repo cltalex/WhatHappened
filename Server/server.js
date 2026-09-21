@@ -4,13 +4,16 @@ require('dotenv').config({
 });
 const express = require("express");
 const cors = require("cors");
+
 const citiesRoute = require("./routes/cities");
 const messageRoute = require("./routes/message");
 const newsRoute = require("./routes/news");
 const weatherRoute = require("./routes/weather");
 const trendsRoute = require("./routes/trends");
+const topSongRoute = require("./routes/topsong");
+const economyRoute = require("./routes/economy");
 
-const PORT = 3000;
+const PORT = process.env.SERVER_PORT;
 const app = express();
 
 app.use(cors());
@@ -21,7 +24,8 @@ app.use("/api/message", messageRoute);
 app.use("/api/news", newsRoute);
 app.use("/api/weather", weatherRoute);
 app.use("/api/trends", trendsRoute);
-
+app.use("/api/topSong", topSongRoute);
+app.use("/api/economy", economyRoute);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

@@ -1,0 +1,282 @@
+{
+  "Eras": [
+    {
+      "start": "1930",
+      "end": "1939",
+      "Fem": {
+        "name": "The Bias Cut",
+        "description": "Dresses became more slim creating a slender, silhouette look. Dresses had elongated torsos with widening shoulders and flared out slightly at the ankle",
+        "cutoutIMG": "Images/Eras/1930/Fem/Cutout.png",
+        "tFramedIMG": "Images/Eras/1930/Fem/1.png",
+        "bFramedIMG": "Images/Eras/1930/Fem/2.png"
+      },
+      "Masc": {
+        "name": "More Formal Styles",
+        "description": "Silhouettes slimmed down after the looser, baggy fits of the 1920s. Suits were worn with semi-accentuated waists to match the womenswear shift. New material such as sharkskin, a synthetic fabric, gained in popularity for suits",
+        "cutoutIMG": "Images/Eras/1930/Masc/Cutout.png",
+        "tFramedIMG": "Images/Eras/1930/Masc/1.png",
+        "bFramedIMG": "Images/Eras/1930/Masc/2.png"
+      }
+    },
+    {
+      "start": "1940",
+      "end": "1949",
+      "Fem": {
+        "name": "Era of Utility",
+        "description": "WWII forced women's fashion to become highly practical, yet it retained a sharp elegance. The standard look was military-inspired toughness. Women entered the workforce and began wearing high-waisted, wide-leg trousers and denim overalls.",
+        "cutoutIMG": "Images/Eras/1940/Fem/Cutout.png",
+        "tFramedIMG": "Images/Eras/1940/Fem/1.png",
+        "bFramedIMG": "Images/Eras/1940/Fem/2.png"
+      },
+      "Masc": {
+        "name": "The Zoot Suit",
+        "description": "The zoot suit was billowed with excess fabric. The suit style became popular with Black, Mexican American, and Latino men who found tailors to take in oversized suits",
+        "cutoutIMG": "Images/Eras/1940/Masc/Cutout.png",
+        "tFramedIMG": "Images/Eras/1940/Masc/1.png",
+        "bFramedIMG": "Images/Eras/1940/Masc/2.png"
+      }
+    },
+    {
+      "start": "1950",
+       "end": "1959",
+      "Fem": {
+        "name": "The New Look",
+        "description": "Fashion embraced a feminine silhouettes with cinched waists, full skirts, gloves, and elegant dresses. Inspired by Hollywood glamour, women wore poodle skirts, sweater sets, and fitted tops.",
+        "cutoutIMG": "Images/Eras/1950/Fem/Cutout.png",
+        "tFramedIMG": "Images/Eras/1950/Fem/1.png",
+        "bFramedIMG": "Images/Eras/1950/Fem/2.png"
+      },
+      "Masc": {
+        "name": "Era of Rock and Roll",
+
+        "description": "Men's fashion mixed formal wear with rebellious youth culture. Leather jackets, white t-shirts, cuffed jeans, and slicked-back hair became iconic thanks to rock and roll culture.",
+
+        "cutoutIMG": "Images/Eras/1950/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1950/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/1950/Masc/2.png"
+
+      }
+
+    },
+
+    {
+
+      "start": "1960",
+
+       "end": "1969",
+
+      "Fem": {
+
+        "name": "Mod Fashion",
+
+        "description": "The 1960s introduced bold colors, geometric prints, and the miniskirt. Fashion became youthful and experimental with go-go boots, shift dresses, and sleek hairstyles.",
+
+        "cutoutIMG": "Images/Eras/1960/Fem/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1960/Fem/1.png",
+
+        "bFramedIMG": "Images/Eras/1960/Fem/2.png"
+
+      },
+
+      "Masc": {
+
+        "name": "The Mod Look",
+
+        "description": "Slim-cut suits, turtlenecks, Chelsea boots, and mop-top hairstyles defined menswear. British bands heavily influenced style, creating a clean and modern aesthetic.",
+
+        "cutoutIMG": "Images/Eras/1960/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1960/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/1960/Masc/2.png"
+
+      }
+
+    },
+
+    {
+
+      "start": "1970",
+
+       "end": "1979",
+
+      "Fem": {
+
+        "name": "Bohemian Glam",
+
+        "description": "Women embraced bell-bottom jeans, platform shoes, fringe jackets, and earthy colors. Disco fashion later introduced sequins, jumpsuits, and glittering fabrics.",
+
+        "cutoutIMG": "Images/Eras/1970/Fem/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1970/Fem/1.png",
+
+        "bFramedIMG": "Images/Eras/1970/Fem/2.png"
+
+      },
+
+      "Masc": {
+
+        "name": "Disco Fever",
+
+        "description": "Menswear became expressive with flared pants, colorful suits, patterned shirts, and platform shoes. Long hair and wide collars completed the bold disco-inspired look.",
+
+        "cutoutIMG": "Images/Eras/1970/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1970/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/1970/Masc/2.png"
+
+      }
+
+    },
+
+    {
+
+      "start": "1980",
+
+       "end": "1989",
+
+      "Fem": {
+
+        "name": "Power Dressing",
+
+        "description": "Fashion became loud and confident with neon colors, oversized blazers, shoulder pads, leggings, and teased hair. Athletic wear and glam styles both dominated the decade.",
+
+        "cutoutIMG": "Images/Eras/1980/Fem/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1980/Fem/1.png",
+
+        "bFramedIMG": "Images/Eras/1980/Fem/2.png"
+
+      },
+
+      "Masc": {
+
+        "name": "Bold Excess",
+
+        "description": "Men wore acid-wash jeans, leather jackets, tracksuits, and oversized clothing. Bright colors, mullets, and athletic-inspired streetwear became mainstream.",
+
+        "cutoutIMG": "Images/Eras/1980/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1980/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/1980/Masc/2.png"
+
+      }
+
+    },
+
+    {
+
+      "start": "1990",
+
+       "end": "1999",
+
+      "Fem": {
+
+        "name": "Minimalist Grunge",
+
+        "description": "Fashion shifted toward relaxed and casual styles with slip dresses, flannel shirts, chokers, ripped jeans, and combat boots. Minimalism mixed with alternative fashion became popular.",
+
+        "cutoutIMG": "Images/Eras/1990/Fem/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1990/Fem/1.png",
+
+        "bFramedIMG": "Images/Eras/1990/Fem/2.png"
+
+      },
+
+      "Masc": {
+
+        "name": "Streetwear Rise",
+
+        "description": "Baggy jeans, oversized t-shirts, sneakers, and flannel shirts defined the decade. Hip-hop and grunge culture heavily influenced everyday menswear.",
+
+        "cutoutIMG": "Images/Eras/1990/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/1990/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/1990/Masc/2.png"
+
+      }
+
+    },
+
+    {
+
+      "start": "2000",
+
+       "end": "2009",
+
+      "Fem": {
+
+        "name": "Y2K Fashion",
+
+        "description": "Low-rise jeans, crop tops, rhinestones, velour tracksuits, and shiny metallic fabrics captured the futuristic Y2K aesthetic. Pop stars heavily influenced trends. The digital age inspired this too.",
+
+        "cutoutIMG": "Images/Eras/2000/Fem/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/2000/Fem/1.png",
+
+        "bFramedIMG": "Images/Eras/2000/Fem/2.png"
+
+      },
+
+      "Masc": {
+
+        "name": "Baggy Street Style",
+
+        "description": "Cargo pants, oversized jerseys, graphic tees, and layered outfits became popular. Skater culture, hip-hop, and sporty fashion shaped the early 2000s look.",
+
+        "cutoutIMG": "Images/Eras/2000/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/2000/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/2000/Masc/2.png"
+
+      }
+
+    },
+
+    {
+
+      "start": "2010",
+
+       "end": "2019",
+
+      "Fem": {
+
+        "name": "Social Media Fashion",
+
+        "description": "This era introduced aesthetics with influencer culture. Skater skirts, leggings, and oversized sweaters. Galaxy print was also big on leggings and backpacks.",
+
+        "cutoutIMG": "Images/Eras/2010/Fem/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/2010/Fem/1.png",
+
+        "bFramedIMG": "Images/Eras/2010/Fem/2.png"
+
+      },
+
+      "Masc": {
+
+        "name": "Athleisure Style",
+
+        "description": "Skinny jeans, baggy jeans, sneakers, hoodies, joggers, and streetwear brands became dominant. Sportswear also became popular.",
+
+        "cutoutIMG": "Images/Eras/2010/Masc/Cutout.png",
+
+        "tFramedIMG": "Images/Eras/2010/Masc/1.png",
+
+        "bFramedIMG": "Images/Eras/2010/Masc/2.png"
+
+      }
+
+    }
+
+  ]
+
+}

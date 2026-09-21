@@ -1,10 +1,18 @@
-const backendURL = "http://localhost:3000";
+const backendURL = "http://localhost:" + 3000;
 
 var bdayData = {
-	 trends: {
-		start: 0,
-		fem: {
-		  name: "",
+    economy: {
+        dollarValue: 0,
+        gasPrice: 0,
+    },
+    topSong: {
+        artist: "",
+        title: "",
+    },
+    trends: {
+        start: 0,
+        fem: {
+          name: "",
 		  description: "",
 		  cutoutIMG: "",
 		  tFrameING: "",
@@ -50,7 +58,7 @@ const dateInput = document.getElementById("date-input");
 const errorText = document.getElementById("forum-error-text");
 
 cityInput.addEventListener("input", () => {
-    selectedCity = false; //false when typing in it
+    selectedCity = false;                    //false when typing in it
 });
 if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/index.html" || window.location.href === "file:///C:/Users/alex/OneDrive/Documents/App/WhatHappened/Index.html") {
     dateInput.value = "2009-01-01";
@@ -63,7 +71,6 @@ if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App
     };
     selectedCity = true;
 }
-
 
 async function UpdateCitySuggestions() {
     const query = cityInput.value.trim();
@@ -80,10 +87,8 @@ async function UpdateCitySuggestions() {
         citySuggestionsBox.innerHTML = "";
         data.forEach(place => {
             const div = document.createElement("div");
-            div.parentElement = 
+            // div.parentElement = 
             div.classList.add("suggestion-item");
-            div.textContent = place.cityData.formatted;
-            console.log(place.cityData);
             div.addEventListener("click", () => {
                 submittedLocationData = place.cityData;
                 cityInput.value = submittedLocationData.formatted;
@@ -136,7 +141,10 @@ async function GetData() {
     }
     const tasks = [
         { run: () => fetchNews(dateInput.value) },
-        { run: () => fetchWeather(dateInput.value) }
+        { run: () => fetchWeather(dateInput.value) },
+        { run: () => fetchTrends(dateInput.value) },
+        { run: () => fetchTopSong(dateInput.value) },
+        { run: () => fetchEconomy(dateInput.value) }
     ];
     await loadingTasks(tasks);
 }
@@ -161,4 +169,34 @@ async function fetchWeather(date) {
     );
     if (!response.ok) throw new Error(`weather request failed: ${response.status}`);
     bdayData.weather = await response.json();
+}
+
+async function fetchTrends(date) {
+    ChangeLoadingText("Gettings trends...", "yellow");
+    const response = await fetch(
+        backendURL +
+        `/api/trends?date=${encodeURIComponent(date)}`
+    );
+    if (!response.ok) throw new Error(`Trends request failed: ${response.status}`);
+    bdayData.trends = await response.json();
+}
+
+async function fetchTopSong(date) {
+    ChangeLoadingText("Getting top song...", "green");
+    const response = await fetch(
+        backendURL +
+        `/api/topSong?date=${encodeURIComponent(date)}`
+    );
+    if (!response.ok) throw new Error(`Top song request failed: ${response.status}`);
+    bdayData.topSong = await response.json();
+}
+
+async function fetchEconomy(date) {
+    ChangeLoadingText("Getting economy data...", "purple");
+    const response = await fetch(
+        backendURL +
+        `/api/economy?date=${encodeURIComponent(date)}&country=${encodeURIComponent(submittedLocationData.country.replaceAll(" ", "-")).toLowerCase()}`
+    );
+    if (!response.ok) throw new Error(`Economy request failed: ${response.status}`);
+    bdayData.economy = await response.json();
 }
