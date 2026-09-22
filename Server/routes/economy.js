@@ -21,53 +21,38 @@ router.get("/", async (req, res) => {
         const dollarInflationResponse = await fetch(
             `https://www.statbureau.org/calculate-inflation-price-json?jsoncallback=jQuery1112030168503952351233_1781976277288&country=${encodeURIComponent(country)}&start=${encodeURIComponent(date)}&end=${encodeURIComponent(todayDate)}&amount=1&format=true`
         );
-        console.log(dollarInflationResponse);
+
         const dollarInflationData = await dollarInflationResponse.json();
-        if (!dollarInflationData.response || dollarInflationData.response.docs.length === 0) {
+
+        if (!dollarInflationData) {
             return res.status(404).json({
                 error: "No dollar inflation data found for this date and country"
             });
         }
-        const dollarValue = dollarInflationData.response;
-        
+
+        const dollarValue = dollarInflationData;
+
+        const endDateDate = new Date();
+        endDateDate.setDate(endDateDate.getDate() + 15);
+        const endDate = endDateDate.toISOString().split("T")[0];
 
         const gasPriceResponse = await fetch(
-            `https://api.eia.gov/v2/natural-gas/pri/sum/data/?api_key=3zjKYxV86AqtJWSRoAECir1wQFscVu6lxXnRVKG8`, {
-                headers: {
-                    "X-Params": {
-                        "frequency": "annual",
-                        "data": [
-                            "value"
-                        ],
-                        "facets": {},
-                        "start": date,
-                        "end": todayDate,
-                        "sort": [
-                            {
-                                "column": "period",
-                                "direction": "desc"
-                            }
-                        ],
-                        "offset": 0,
-                        "length": 1
-                    }
-                },
-            }
-        )
+            `https://api.eia.gov/v2/petroleum/pri/gnd/data/?api_key=3zjKYxV86AqtJWSRoAECir1wQFscVu6lxXnRVKG8&frequency=weekly&data[0]=value&facets[series][]=EMM_EPM0_PTE_NUS_DPG&start=${encodeURIComponent(date)}&end=${encodeURIComponent(endDate)}&sort[0][column]=period&sort[0][direction]=asc&length=1`
+        );
         const gasPriceData = await gasPriceResponse.json();
-        if (!gasPriceData.response || gasPriceData.response.docs.length === 0) {
+        if (!gasPriceData || !gasPriceData.response.data[0].value) {
             return res.status(404).json({
                 error: "No gas price data found for this date and country"
             });
         }
-        const gasPrice = gasPriceData.response.data[0].value;
+        const gasPrice = gasPriceData.response.data[0].value + gasPriceData.response.data[0].units;
 
         const Economy = {
             dollarValue: dollarValue,
             gasPrice: gasPrice,
         }
-        res.json(Economy);
 
+        res.json(Economy);
     } catch (error) {
         console.error(error);
         res.status(500).json({

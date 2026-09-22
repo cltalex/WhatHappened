@@ -1,4 +1,5 @@
 const backendURL = "http://localhost:" + 3000;
+let sessionTokenPromise = createSession();
 
 var bdayData = {
     economy: {
@@ -57,10 +58,26 @@ const citySuggestionsBox = document.getElementById("city-suggestions");
 const dateInput = document.getElementById("date-input");
 const errorText = document.getElementById("forum-error-text");
 
+async function createSession() {
+    const response = await fetch(`${backendURL}/api/session`, {
+        method: "POST",
+    });
+    if (!response.ok) throw new Error(`session request failed: ${response.status}`);
+    const data = await response.json();
+    return data.token;
+}
+
+async function apiFetch(url, options = {}) {
+    const sessionToken = await sessionTokenPromise;
+    const headers = new Headers(options.headers);
+    headers.set("x-session-token", sessionToken);
+    return fetch(url, { ...options, headers });
+}
+
 cityInput.addEventListener("input", () => {
     selectedCity = false;                    //false when typing in it
 });
-if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/index.html" || window.location.href === "file:///C:/Users/alex/OneDrive/Documents/App/WhatHappened/Index.html") {
+if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/index.html" || window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/Index.html") {
     dateInput.value = "2009-01-01";
     cityInput.value = "Woodlake, CA, United States of America";
     submittedLocationData = {
@@ -79,7 +96,7 @@ async function UpdateCitySuggestions() {
         return;
     }
     try {
-        const response = await fetch(
+        const response = await apiFetch(
             backendURL +
             `/api/cities?q=${encodeURIComponent(query)}`
         );
@@ -127,6 +144,8 @@ async function loadingTasks(tasks) {
         throw error;
     } finally {
         // switch to display page
+        localStorage.setItem("UserData", JSON.stringify(bdayData));
+        
     }
 }
 
@@ -154,7 +173,7 @@ async function GetData() {
 async function fetchNews(date) {
     ChangeLoadingText("Gettings news...", "orange");
     const stupidDateFormat = dateInput.value.replaceAll("-", "");
-    const response = await fetch(
+    const response = await apiFetch(
         backendURL +
         `/api/news?date=${encodeURIComponent(stupidDateFormat)}&country=${encodeURIComponent(submittedLocationData.country.replaceAll(" ", ""))}`
     );
@@ -163,7 +182,7 @@ async function fetchNews(date) {
 }
 async function fetchWeather(date) {
     ChangeLoadingText("Gettings weather...", "lightblue");
-    const response = await fetch(
+    const response = await apiFetch(
         backendURL +
         `/api/weather?date=${encodeURIComponent(date)}&lat=${encodeURIComponent(submittedLocationData.latitude)}&lon=${encodeURIComponent(submittedLocationData.longitude)}`
     );
@@ -173,7 +192,7 @@ async function fetchWeather(date) {
 
 async function fetchTrends(date) {
     ChangeLoadingText("Gettings trends...", "yellow");
-    const response = await fetch(
+    const response = await apiFetch(
         backendURL +
         `/api/trends?date=${encodeURIComponent(date)}`
     );
@@ -183,7 +202,7 @@ async function fetchTrends(date) {
 
 async function fetchTopSong(date) {
     ChangeLoadingText("Getting top song...", "green");
-    const response = await fetch(
+    const response = await apiFetch(
         backendURL +
         `/api/topSong?date=${encodeURIComponent(date)}`
     );
@@ -193,7 +212,7 @@ async function fetchTopSong(date) {
 
 async function fetchEconomy(date) {
     ChangeLoadingText("Getting economy data...", "purple");
-    const response = await fetch(
+    const response = await apiFetch(
         backendURL +
         `/api/economy?date=${encodeURIComponent(date)}&country=${encodeURIComponent(submittedLocationData.country.replaceAll(" ", "-")).toLowerCase()}`
     );
