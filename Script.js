@@ -61,13 +61,28 @@ const errorText = document.getElementById("forum-error-text");
 const submitbtn = document.getElementById("submit-btn");
 
 async function createSession() {
-    const response = await fetch(`${backendURL}/api/session`, {
-        method: "POST",
-    });
-    if (!response.ok) throw new Error(`session request failed: ${response.status}`);
+    let response;
+    try {
+        response = await fetch(`${backendURL}/api/session`, {
+            method: "POST",
+        });
+    } catch (error) {
+        console.error(error);
+        const message = "Could not connect to the server. Please try again later.";
+        ShowLoadingError(message);
+        throw new Error(message);
+    }
+    if (!response.ok) {
+        const message = `Request failed: ${response.status}`;
+        ShowLoadingError(message);
+        throw new Error(message);
+    }
     const data = await response.json();
     return data.token;
 }
+
+// stops the browser logging the rejection as unhandled.
+sessionTokenPromise.catch(() => {});
 
 async function apiFetch(url, options = {}) {
     const sessionToken = await sessionTokenPromise;
@@ -150,6 +165,12 @@ function ChangeLoadingText(text, _color) {
     document.getElementById("loading-text").style.color = _color;
 }
 
+function ShowLoadingError(text) {
+    // The error element lives inside the loading overlay, which is hidden until loading starts
+    document.getElementById("loading-container").style.display = "block";
+    document.getElementById("error-text").innerHTML = text;
+}
+
 async function loadingTasks(tasks) {
     document.getElementById("loading-container").style.display = "block";
     errorText.innerHTML = "";
@@ -162,10 +183,11 @@ async function loadingTasks(tasks) {
         return results;
     } catch (error) {
         console.error(error);
-        errorText.innerHTML =
+        ShowLoadingError(
             error instanceof Error
                 ? error.message
-                : "Something went wrong with the loading tasks";
+                : "Something went wrong with the loading tasks"
+        );
         throw error;
     } finally {
         // switch to display page
@@ -201,7 +223,7 @@ async function fetchNews(date) {
         backendURL +
         `/api/news?date=${encodeURIComponent(stupidDateFormat)}&country=${encodeURIComponent(submittedLocationData.country.replaceAll(" ", ""))}`
     );
-    if (!response.ok) throw new Error(`news request failed: ${response.status}`);
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.newsArticles = await response.json();
 }
 async function fetchWeather(date) {
@@ -210,7 +232,7 @@ async function fetchWeather(date) {
         backendURL +
         `/api/weather?date=${encodeURIComponent(date)}&lat=${encodeURIComponent(submittedLocationData.latitude)}&lon=${encodeURIComponent(submittedLocationData.longitude)}`
     );
-    if (!response.ok) throw new Error(`weather request failed: ${response.status}`);
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.weather = await response.json();
 }
 
@@ -220,7 +242,7 @@ async function fetchTrends(date) {
         backendURL +
         `/api/trends?date=${encodeURIComponent(date)}`
     );
-    if (!response.ok) throw new Error(`Trends request failed: ${response.status}`);
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.trends = await response.json();
 }
 
@@ -230,7 +252,7 @@ async function fetchTopSong(date) {
         backendURL +
         `/api/topSong?date=${encodeURIComponent(date)}`
     );
-    if (!response.ok) throw new Error(`Top song request failed: ${response.status}`);
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.topSong = await response.json();
 }
 
@@ -240,6 +262,6 @@ async function fetchEconomy(date) {
         backendURL +
         `/api/economy?date=${encodeURIComponent(date)}&country=${encodeURIComponent(submittedLocationData.country.replaceAll(" ", "-")).toLowerCase()}`
     );
-    if (!response.ok) throw new Error(`Economy request failed: ${response.status}`);
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.economy = await response.json();
 }

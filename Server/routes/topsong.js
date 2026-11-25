@@ -9,14 +9,12 @@ router.get("/", async (req, res) => {
     }
     try {
         const closestSaturday = getPreviousSaturday(date);
-        console.log(`https://raw.githubusercontent.com/mhollingshead/billboard-hot-100/main/date/${closestSaturday}.json`);
         const response = await fetch(
             `https://raw.githubusercontent.com/mhollingshead/billboard-hot-100/main/date/${closestSaturday}.json`
         );
 
         const data = await response.json();
         if (!data) return res.status(500).json({ error: "No song data found" });
-        console.log(data);
 
         const topSong = {
             artist: data.data[0].artist,
