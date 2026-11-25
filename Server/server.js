@@ -55,5 +55,5 @@ app.listen(PORT, () => {
     });
 
     console.log(`Server running on port ${PORT}`);
-    console.log(`All ${routes.length} endpoints loaded without errors :3`);
+    console.log(`All ${routes.length} endpoints loaded hehe :3`);
 });
