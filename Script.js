@@ -5,6 +5,7 @@ var bdayData = {
     economy: {
         dollarValue: 0,
         gasPrice: 0,
+        todayGasPrice: 0,
     },
     topSong: {
         artist: "",
@@ -57,6 +58,7 @@ const cityInput = document.getElementById("cityInput");
 const citySuggestionsBox = document.getElementById("city-suggestions");
 const dateInput = document.getElementById("date-input");
 const errorText = document.getElementById("forum-error-text");
+const submitbtn = document.getElementById("submit-btn");
 
 async function createSession() {
     const response = await fetch(`${backendURL}/api/session`, {
@@ -76,7 +78,9 @@ async function apiFetch(url, options = {}) {
 
 cityInput.addEventListener("input", () => {
     selectedCity = false;                    //false when typing in it
+    submitbtn.disabled = true;
 });
+
 if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/index.html" || window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App/Index.html") {
     dateInput.value = "2009-01-01";
     cityInput.value = "Woodlake, CA, United States of America";
@@ -87,30 +91,51 @@ if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App
         longitude: -119.098633
     };
     selectedCity = true;
+    submitbtn.disabled = false;
 }
 
-async function UpdateCitySuggestions() {
+const citySuggestionCache = new Map(); // lowercase query -> suggestions
+let citySuggestionTimer;
+let latestCityQuery = "";
+
+function UpdateCitySuggestions() {
+    clearTimeout(citySuggestionTimer);
+    citySuggestionTimer = setTimeout(fetchCitySuggestions, 250);
+}
+
+async function fetchCitySuggestions() {
     const query = cityInput.value.trim();
+    latestCityQuery = query;
     if (query.length < 2) {
         citySuggestionsBox.innerHTML = "";
         return;
     }
     try {
-        const response = await apiFetch(
-            backendURL +
-            `/api/cities?q=${encodeURIComponent(query)}`
-        );
-        const data = await response.json();
+        const cacheKey = query.toLowerCase();
+        let data = citySuggestionCache.get(cacheKey);
+        if (!data) {
+            const response = await apiFetch(
+                backendURL +
+                `/api/cities?q=${encodeURIComponent(query)}`
+            );
+            if (!response.ok) throw new Error(`city request failed: ${response.status}`);
+            data = await response.json();
+            citySuggestionCache.set(cacheKey, data);
+        }
+        // Ignore responses for a query the user has already typed past
+        if (query !== latestCityQuery) return;
         citySuggestionsBox.innerHTML = "";
         data.forEach(place => {
             const div = document.createElement("div");
-            // div.parentElement = 
             div.classList.add("suggestion-item");
+            div.textContent = place.cityData.formatted;
             div.addEventListener("click", () => {
                 submittedLocationData = place.cityData;
                 cityInput.value = submittedLocationData.formatted;
                 citySuggestionsBox.innerHTML = "";
                 selectedCity = true;
+                submitbtn.disabled = false;
+
             });
             citySuggestionsBox.appendChild(div);
         });
@@ -169,7 +194,6 @@ async function GetData() {
 }
 
 //  FETCH FUNCTIONS
-
 async function fetchNews(date) {
     ChangeLoadingText("Gettings news...", "orange");
     const stupidDateFormat = dateInput.value.replaceAll("-", "");

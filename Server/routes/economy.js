@@ -36,20 +36,32 @@ router.get("/", async (req, res) => {
         endDateDate.setDate(endDateDate.getDate() + 15);
         const endDate = endDateDate.toISOString().split("T")[0];
 
-        const gasPriceResponse = await fetch(
-            `https://api.eia.gov/v2/petroleum/pri/gnd/data/?api_key=3zjKYxV86AqtJWSRoAECir1wQFscVu6lxXnRVKG8&frequency=weekly&data[0]=value&facets[series][]=EMM_EPM0_PTE_NUS_DPG&start=${encodeURIComponent(date)}&end=${encodeURIComponent(endDate)}&sort[0][column]=period&sort[0][direction]=asc&length=1`
-        );
+        
+
+        const gasPriceUrl = (params) =>
+            `https://api.eia.gov/v2/petroleum/pri/gnd/data/?api_key=3zjKYxV86AqtJWSRoAECir1wQFscVu6lxXnRVKG8&frequency=weekly&data[0]=value&facets[series][]=EMM_EPM0_PTE_NUS_DPG&sort[0][column]=period&length=1&${params}`;
+
+        const [gasPriceResponse, todayGasPriceResponse] = await Promise.all([
+            fetch(gasPriceUrl(`start=${encodeURIComponent(date)}&end=${encodeURIComponent(endDate)}&sort[0][direction]=asc`)),
+            fetch(gasPriceUrl("sort[0][direction]=desc"))
+        ]);
         const gasPriceData = await gasPriceResponse.json();
-        if (!gasPriceData || !gasPriceData.response.data[0].value) {
+        const todayGasPriceData = await todayGasPriceResponse.json();
+
+        const gasEntry = gasPriceData?.response?.data?.[0];
+        const todayGasEntry = todayGasPriceData?.response?.data?.[0];
+        if (!gasEntry?.value || !todayGasEntry?.value) {
             return res.status(404).json({
                 error: "No gas price data found for this date and country"
             });
         }
-        const gasPrice = gasPriceData.response.data[0].value + gasPriceData.response.data[0].units;
+        const gasPrice = gasEntry.value + gasEntry.units;
+        const todayGasPrice = todayGasEntry.value + todayGasEntry.units;
 
         const Economy = {
             dollarValue: dollarValue,
             gasPrice: gasPrice,
+            todayGasPrice: todayGasPrice,
         }
 
         res.json(Economy);
