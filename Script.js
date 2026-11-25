@@ -17,14 +17,14 @@ var bdayData = {
           name: "",
 		  description: "",
 		  cutoutIMG: "",
-		  tFrameING: "",
+		  tFrameIMG: "",
 		  bFrameIMG: "",
 		},
 		masc: {
 		  name: "",
 		  description: "",
 		  cutoutIMG: "",
-	      tFrameING: "",
+	      tFrameIMG: "",
 		  bFrameIMG: "",
 		},
 	 },
@@ -49,6 +49,23 @@ var bdayData = {
             thumbnail: "",
         }
     },
+    birthdayBesties: {
+        bestie1: {
+            thumbnail: "",
+            name: "",
+            profession: ""
+        },
+        bestie2: {
+            thumbnail: "",
+            name: "",
+            profession: ""
+        },
+        bestie3: {
+            thumbnail: "",
+            name: "",
+            profession: ""
+        }
+    }
 };
 
 var submittedLocationData = "";
@@ -68,7 +85,7 @@ async function createSession() {
         });
     } catch (error) {
         console.error(error);
-        const message = "Could not connect to the server. Please try again later.";
+        const message = "Couldn't connect to server. Try again later.";
         ShowLoadingError(message);
         throw new Error(message);
     }
@@ -81,7 +98,7 @@ async function createSession() {
     return data.token;
 }
 
-// stops the browser logging the rejection as unhandled.
+// stops fuckass browser logging the rejection as unhandled.
 sessionTokenPromise.catch(() => {});
 
 async function apiFetch(url, options = {}) {
@@ -109,7 +126,7 @@ if (window.location.href === "file:///C:/Users/coder/OneDrive/Documents/Code/App
     submitbtn.disabled = false;
 }
 
-const citySuggestionCache = new Map(); // lowercase query -> suggestions
+const citySuggestionCache = new Map();
 let citySuggestionTimer;
 let latestCityQuery = "";
 
@@ -137,7 +154,7 @@ async function fetchCitySuggestions() {
             data = await response.json();
             citySuggestionCache.set(cacheKey, data);
         }
-        // Ignore responses for a query the user has already typed past
+        // Ignore response for a query the ppl have alr typed past
         if (query !== latestCityQuery) return;
         citySuggestionsBox.innerHTML = "";
         data.forEach(place => {
@@ -166,7 +183,6 @@ function ChangeLoadingText(text, _color) {
 }
 
 function ShowLoadingError(text) {
-    // The error element lives inside the loading overlay, which is hidden until loading starts
     document.getElementById("loading-container").style.display = "block";
     document.getElementById("error-text").innerHTML = text;
 }
@@ -210,7 +226,8 @@ async function GetData() {
         { run: () => fetchWeather(dateInput.value) },
         { run: () => fetchTrends(dateInput.value) },
         { run: () => fetchTopSong(dateInput.value) },
-        { run: () => fetchEconomy(dateInput.value) }
+        { run: () => fetchEconomy(dateInput.value) },
+        { run: () => fetchBirthdayBesties(dateInput.value) }
     ];
     await loadingTasks(tasks);
 }
@@ -264,4 +281,15 @@ async function fetchEconomy(date) {
     );
     if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.economy = await response.json();
+}
+
+async function fetchBirthdayBesties(date) {
+    const newDate = date.split('-').slice(1).join('-')
+    ChangeLoadingText("Getting besties...", "pink");
+    const response = await apiFetch(
+        backendURL +
+        `/api/besties?date=${encodeURIComponent(newDate)}`
+    );
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
+    bdayData.birthdayBesties = await response.json();
 }

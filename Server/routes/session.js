@@ -3,7 +3,7 @@ const crypto = require("crypto");
 
 const router = express.Router();
 
-const SESSION_TTL_MS = 60 * 60 * 1000;
+const SESSION_TTL_MS = 60 * 60 * 1000; // 1 hour in milliseconds
 const sessions = new Map(); // token -> expiry timestamp
 
 function pruneExpired() {

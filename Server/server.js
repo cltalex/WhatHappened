@@ -14,6 +14,7 @@ const weatherRoute = require("./routes/weather");
 const trendsRoute = require("./routes/trends");
 const topSongRoute = require("./routes/topsong");
 const economyRoute = require("./routes/economy");
+const bestiesRoute = require("./routes/besties");
 
 const { router: sessionRoute, requireSession } = require("./routes/session");
 
@@ -24,7 +25,8 @@ const routes = [
     ["/api/weather", weatherRoute],
     ["/api/trends", trendsRoute],
     ["/api/topSong", topSongRoute],
-    ["/api/economy", economyRoute]
+    ["/api/economy", economyRoute],
+    ["/api/besties", bestiesRoute]
 ];
 
 const PORT = process.env.SERVER_PORT;
@@ -37,7 +39,7 @@ app.use(express.json());
 const limiterOptions = {
     standardHeaders: true,
     legacyHeaders: false,
-    message: { error: "Too many requests" }
+    message: { error: "oh my gawwwd stop spamming :3" }
 };
 const sessionLimiter = rateLimit({ ...limiterOptions, windowMs: 60 * 1000, limit: 10 }); //every IP can create a session at most 10 times per minute
 const apiLimiter = rateLimit({ ...limiterOptions, windowMs: 60 * 1000, limit: 25 });

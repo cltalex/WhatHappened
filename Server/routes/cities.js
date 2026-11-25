@@ -26,7 +26,7 @@ function setCached(key, cities) {
 router.get("/", async (req, res) => {
     const query = typeof req.query.q === "string" ? req.query.q.trim() : "";
 
-    if (query.length < 2) {
+    if (query.length < 2 || !/^[a-zA-Z,]+$/.test(query)) { // Require at least 2 characters and only letters and commas
         return res.json([]);
     }
 

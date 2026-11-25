@@ -20,14 +20,14 @@ router.get("/", async (req, res) => {
                 name: era.Fem.name,
                 description: era.Fem.description,
                 cutoutIMG: era.Fem.cutoutIMG,
-                tFrameING: era.Fem.tFrameING,
+                tFrameIMG: era.Fem.tFrameIMG,
                 bFrameIMG: era.Fem.bFrameIMG,
             },
             masc: {
                 name: era.Masc.name,
                 description: era.Masc.description,
                 cutoutIMG: era.Masc.cutoutIMG,
-                tFrameING: era.Masc.tFrameING,
+                tFrameIMG: era.Masc.tFrameIMG,
                 bFrameIMG: era.Masc.bFrameIMG,
             },
         };
