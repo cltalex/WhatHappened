@@ -2,7 +2,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="Spinner.css">
     <script src="Script.js" defer></script>
+
+    <title>What Happened</title>
 </head>
 
 <body>
@@ -12,6 +15,7 @@
     <div class="loading-container" id="loading-container" style="display:none">
         <div class="loading-text" id="loading-text"></div>
         <div class="ErrorText" id="error-text"></div>
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
 
     <div class="forum-container">
@@ -24,5 +28,3 @@
         <button class="submit-btn" id="submit-btn" onclick="GetData()"><span aria-hidden="true">&rarr;</span></button>
     </div>
 </body>
-
-<!-- no error message appears if a loading task fails, fix it bro -->
