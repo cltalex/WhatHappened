@@ -1,0 +1,890 @@
+{
+  "metadata": {
+    "title": "Historical U.S. Regular Gasoline Prices, 1930-2026",
+    "country": "United States",
+    "geographic_scope": "U.S. national average",
+    "currency": "USD",
+    "unit": "dollars per U.S. gallon",
+    "price_basis": "Nominal/current dollars; not adjusted for inflation",
+    "price_includes_taxes": true,
+    "fuel_grade": "Regular gasoline",
+    "methodology_notes": [
+      "The historical series reports regular leaded gasoline through 1989 and regular unleaded gasoline beginning in 1990.",
+      "1930-1991 values are taken from the Oak Ridge National Laboratory historical table and retain its published precision of $0.01.",
+      "1992-2025 values use the EIA annual U.S. Regular All Formulations series. EIA annual averages are simple averages of weekly observations.",
+      "EIA reports no complete annual averages for 1990 and 1991 in its current weekly-derived annual series because weekly data were not collected across part of that period; those two years therefore use the historical ORNL table.",
+      "2026 is not a completed year. Its value is a year-to-date mean of EIA weekly observations through 2026-11-23, not a full-year average.",
+      "Because the source series and collection methods differ, treat the 1991-1992 transition as a source/method change when comparing year-to-year movements."
+    ],
+    "sources": [
+      {
+        "id": "ornl_historical_1930_2015",
+        "publisher": "Oak Ridge National Laboratory, U.S. Department of Energy",
+        "document": "Vehicle Technologies Fact of the Week 2015, Fact #888: Historical Gas Prices",
+        "published": "2016-05",
+        "table_coverage": "1930-2015",
+        "used_for_years": "1930-1991",
+        "table_pages": "108-110",
+        "url": "https://info.ornl.gov/sites/publications/Files/Pub67767.pdf"
+      },
+      {
+        "id": "eia_annual_regular_all_formulations",
+        "publisher": "U.S. Energy Information Administration",
+        "document": "U.S. Regular All Formulations Retail Gasoline Prices (Annual)",
+        "used_for_years": "1992-2025",
+        "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?f=A&n=PET&s=EMM_EPMR_PTE_NUS_DPG"
+      },
+      {
+        "id": "eia_weekly_regular_all_formulations",
+        "publisher": "U.S. Energy Information Administration",
+        "document": "Weekly U.S. Regular All Formulations Retail Gasoline Prices",
+        "used_for_years": "2026 year-to-date through 2026-11-23",
+        "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?f=w&n=PET&s=EMM_EPMR_PTE_NUS_DPG"
+      }
+    ],
+    "data_last_checked": "2026-11-26"
+  },
+  "annual_prices": [
+    {
+      "year": 1930,
+      "price_usd_per_gallon": 0.2,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1931,
+      "price_usd_per_gallon": 0.17,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1932,
+      "price_usd_per_gallon": 0.18,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1933,
+      "price_usd_per_gallon": 0.18,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1934,
+      "price_usd_per_gallon": 0.19,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1935,
+      "price_usd_per_gallon": 0.19,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1936,
+      "price_usd_per_gallon": 0.19,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1937,
+      "price_usd_per_gallon": 0.2,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1938,
+      "price_usd_per_gallon": 0.2,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1939,
+      "price_usd_per_gallon": 0.19,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1940,
+      "price_usd_per_gallon": 0.18,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1941,
+      "price_usd_per_gallon": 0.19,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1942,
+      "price_usd_per_gallon": 0.2,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1943,
+      "price_usd_per_gallon": 0.21,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1944,
+      "price_usd_per_gallon": 0.21,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1945,
+      "price_usd_per_gallon": 0.21,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1946,
+      "price_usd_per_gallon": 0.21,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1947,
+      "price_usd_per_gallon": 0.23,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1948,
+      "price_usd_per_gallon": 0.26,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1949,
+      "price_usd_per_gallon": 0.27,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1950,
+      "price_usd_per_gallon": 0.27,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1951,
+      "price_usd_per_gallon": 0.27,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1952,
+      "price_usd_per_gallon": 0.27,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1953,
+      "price_usd_per_gallon": 0.27,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1954,
+      "price_usd_per_gallon": 0.29,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1955,
+      "price_usd_per_gallon": 0.29,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1956,
+      "price_usd_per_gallon": 0.29,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1957,
+      "price_usd_per_gallon": 0.3,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1958,
+      "price_usd_per_gallon": 0.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1959,
+      "price_usd_per_gallon": 0.3,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1960,
+      "price_usd_per_gallon": 0.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1961,
+      "price_usd_per_gallon": 0.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1962,
+      "price_usd_per_gallon": 0.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1963,
+      "price_usd_per_gallon": 0.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1964,
+      "price_usd_per_gallon": 0.3,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1965,
+      "price_usd_per_gallon": 0.3,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1966,
+      "price_usd_per_gallon": 0.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1967,
+      "price_usd_per_gallon": 0.32,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1968,
+      "price_usd_per_gallon": 0.33,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1969,
+      "price_usd_per_gallon": 0.34,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1970,
+      "price_usd_per_gallon": 0.35,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1971,
+      "price_usd_per_gallon": 0.36,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1972,
+      "price_usd_per_gallon": 0.36,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1973,
+      "price_usd_per_gallon": 0.36,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1974,
+      "price_usd_per_gallon": 0.39,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1975,
+      "price_usd_per_gallon": 0.53,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1976,
+      "price_usd_per_gallon": 0.57,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1977,
+      "price_usd_per_gallon": 0.59,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1978,
+      "price_usd_per_gallon": 0.62,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1979,
+      "price_usd_per_gallon": 0.63,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1980,
+      "price_usd_per_gallon": 0.86,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1981,
+      "price_usd_per_gallon": 1.19,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1982,
+      "price_usd_per_gallon": 1.31,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1983,
+      "price_usd_per_gallon": 1.22,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1984,
+      "price_usd_per_gallon": 1.16,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1985,
+      "price_usd_per_gallon": 1.13,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1986,
+      "price_usd_per_gallon": 1.12,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1987,
+      "price_usd_per_gallon": 0.86,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1988,
+      "price_usd_per_gallon": 0.9,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1989,
+      "price_usd_per_gallon": 0.9,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1990,
+      "price_usd_per_gallon": 1.0,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1991,
+      "price_usd_per_gallon": 1.14,
+      "period": "full_year",
+      "status": "historical",
+      "source_id": "ornl_historical_1930_2015",
+      "fuel_grade": "regular",
+      "fuel_type_note": "Regular leaded gasoline through 1989; regular unleaded from 1990 onward."
+    },
+    {
+      "year": 1992,
+      "price_usd_per_gallon": 1.087,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1993,
+      "price_usd_per_gallon": 1.067,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1994,
+      "price_usd_per_gallon": 1.075,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1995,
+      "price_usd_per_gallon": 1.111,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1996,
+      "price_usd_per_gallon": 1.199,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1997,
+      "price_usd_per_gallon": 1.199,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1998,
+      "price_usd_per_gallon": 1.03,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 1999,
+      "price_usd_per_gallon": 1.136,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2000,
+      "price_usd_per_gallon": 1.484,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2001,
+      "price_usd_per_gallon": 1.42,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2002,
+      "price_usd_per_gallon": 1.345,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2003,
+      "price_usd_per_gallon": 1.561,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2004,
+      "price_usd_per_gallon": 1.852,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2005,
+      "price_usd_per_gallon": 2.27,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2006,
+      "price_usd_per_gallon": 2.572,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2007,
+      "price_usd_per_gallon": 2.796,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2008,
+      "price_usd_per_gallon": 3.246,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2009,
+      "price_usd_per_gallon": 2.353,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2010,
+      "price_usd_per_gallon": 2.782,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2011,
+      "price_usd_per_gallon": 3.521,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2012,
+      "price_usd_per_gallon": 3.618,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2013,
+      "price_usd_per_gallon": 3.505,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2014,
+      "price_usd_per_gallon": 3.358,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2015,
+      "price_usd_per_gallon": 2.429,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2016,
+      "price_usd_per_gallon": 2.143,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2017,
+      "price_usd_per_gallon": 2.415,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2018,
+      "price_usd_per_gallon": 2.719,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2019,
+      "price_usd_per_gallon": 2.604,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2020,
+      "price_usd_per_gallon": 2.168,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2021,
+      "price_usd_per_gallon": 3.008,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2022,
+      "price_usd_per_gallon": 3.951,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2023,
+      "price_usd_per_gallon": 3.519,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2024,
+      "price_usd_per_gallon": 3.304,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2025,
+      "price_usd_per_gallon": 3.097,
+      "period": "full_year",
+      "status": "final_annual_average",
+      "source_id": "eia_annual_regular_all_formulations",
+      "fuel_grade": "regular"
+    },
+    {
+      "year": 2026,
+      "price_usd_per_gallon": 3.8702,
+      "period": "year_to_date",
+      "status": "partial_year_estimate",
+      "through_date": "2026-11-23",
+      "observations": 47,
+      "source_id": "eia_weekly_regular_all_formulations",
+      "fuel_grade": "regular",
+      "calculation": "Arithmetic mean of the 47 EIA weekly national retail price observations dated 2026-01-05 through 2026-11-23; rounded to 4 decimal places."
+    }
+  ]
+}

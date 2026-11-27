@@ -15,6 +15,7 @@ const trendsRoute = require("./routes/trends");
 const topSongRoute = require("./routes/topsong");
 const economyRoute = require("./routes/economy");
 const bestiesRoute = require("./routes/besties");
+const miscRoute = require("./routes/misc");
 
 const { router: sessionRoute, requireSession } = require("./routes/session");
 
@@ -26,7 +27,8 @@ const routes = [
     ["/api/trends", trendsRoute],
     ["/api/topSong", topSongRoute],
     ["/api/economy", economyRoute],
-    ["/api/besties", bestiesRoute]
+    ["/api/besties", bestiesRoute],
+    ["/api/misc", miscRoute]
 ];
 
 const PORT = process.env.SERVER_PORT;

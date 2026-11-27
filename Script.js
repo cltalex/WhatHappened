@@ -65,6 +65,18 @@ var bdayData = {
             name: "",
             profession: ""
         }
+    },
+    misc: {
+        generation: "",
+        birthstone: "",
+        zodiacSign: "",
+        birthSeason: "",
+        bdayPopularity: {
+            births: 0,
+            rank: 0,
+            percentage: 0,
+            rarity: ""
+        }
     }
 };
 
@@ -207,7 +219,8 @@ async function loadingTasks(tasks) {
         throw error;
     } finally {
         // switch to display page
-        localStorage.setItem("UserData", JSON.stringify(bdayData));
+        localStorage.setItem("BdayData", JSON.stringify(bdayData));
+        //window.location.href = "results.html";
         
     }
 }
@@ -227,7 +240,8 @@ async function GetData() {
         { run: () => fetchTrends(dateInput.value) },
         { run: () => fetchTopSong(dateInput.value) },
         { run: () => fetchEconomy(dateInput.value) },
-        { run: () => fetchBirthdayBesties(dateInput.value) }
+        { run: () => fetchBirthdayBesties(dateInput.value) },
+        { run: () => fetchMisc(dateInput.value) }
     ];
     await loadingTasks(tasks);
 }
@@ -281,6 +295,16 @@ async function fetchEconomy(date) {
     );
     if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
     bdayData.economy = await response.json();
+}
+
+async function fetchMisc(date) {
+    ChangeLoadingText("Getting miscellaneous data...", "crimson");
+    const response = await apiFetch(
+        backendURL +
+        `/api/misc?date=${encodeURIComponent(date)}`
+    );
+    if (!response.ok) ShowLoadingError(`Request failed: ${response.status}`);
+    bdayData.misc = await response.json();
 }
 
 async function fetchBirthdayBesties(date) {
